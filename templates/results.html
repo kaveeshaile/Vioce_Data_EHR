@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transcription Results</title>
+</head>
+
+<style>
+        h1{
+            color: #f6f6fa;
+            font-size:6vw;
+        }
+        h2{
+            color: rgb(244, 246, 248);
+        }
+        p{
+            color: rgb(244, 246, 248);
+        }
+        h3{
+            color: rgb(244, 246, 248);
+        }
+        button:hover {
+            background-color: #6699cc; /* Background color on hover */
+            color: black; /* Text color on hover */
+            opacity: 0.8; /* Opacity on hover (70% opacity) */
+        }
+        ul{
+            color: white;
+        }
+        .text-view {
+            border: 1px solid #fdfdfd;
+            padding: 20px;
+            color: white;
+            font-family: monospace;  /* Optional: Monospace font for code-like appearance */
+        }
+</style>
+<body>
+    <body style="background-image: url('/static/mm.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 120vh;"></body>
+    <h2>Transcription Results</h2>
+    <div class="text-view">
+    <p><b>Transcribed Text:</b></p>
+    <pre></pre>{{ transcribed_text }}</pre>
+    </div>
+    <h2>Extracted Information</h2>
+    <ul>
+        <li><b>Patient Names:</b> {% if extracted_info.names %}{{ extracted_info.names|join(', ') }}{% else %}No names found{% endif %}</li>
+        <li><b>Patient Age:</b> {{ extracted_info.age }}{% if not extracted_info.age %} (Age not found){% endif %}</li>
+    </ul>
+
+    <h2>Identified Symptoms</h2>
+    <ul>
+        {% for symptom in symptoms %}
+            <li>{{ symptom }}</li>
+        {% endfor %}
+        {% if not symptoms %}No symptoms identified{% endif %}
+    </ul>
+</body>
+</html>

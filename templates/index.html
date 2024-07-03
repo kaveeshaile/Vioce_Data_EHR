@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transcribe and Analyze Audio</title>
+</head>
+<style>
+    h1{
+        color: #f6f6fa;
+        font-size:3vw;
+    }
+    body {
+            text-align: center;
+        }
+    h2{
+        color: rgb(244, 246, 248);
+    }
+    h3{
+        color: rgb(244, 246, 248);
+    }
+    button {
+        background-color: #070707; /* Background color on hover */
+        color: rgb(252, 248, 248); /* Text color on hover */
+        
+        padding: 10px 20px;
+    }
+    .audio_file{
+        color: white;
+    }
+    input{
+        background-color: #f6f6f7;
+        padding: 10px 20px;
+    }
+    label{
+     color: #f6f6f7;
+    }
+    
+
+</style>
+<body>
+    <body style="background-image: url('/static/mm.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 120vh;"></body>
+    <br>
+        <br>
+        <br>
+        <br>
+    <h1>Transcribe and Analyze Audio</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="audio_file" >Select audio file:</label> <br>
+        <input type="file"  name="audio_file" id="audio_file" accept=".mp3">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button class="btn btn-outline-success" type="submit">Transcribe and Analyze</button>
+    </form>
+    
+    <script>
+       
+    </script>
+</body>
+</html>
